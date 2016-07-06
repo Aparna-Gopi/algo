@@ -1,6 +1,6 @@
 a = raw_input()
 a = a.split(",")
-arr = [eval(x) for x in a]
+arr = [int(x) for x in a]
 for i in range(1,len(arr)) :
 	for j in range(i-1, -1, -1) :
 		if arr[j] > arr[i]:
