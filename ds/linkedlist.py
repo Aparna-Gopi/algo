@@ -20,22 +20,21 @@ class linked_list(object):
     def remove(self,item):
         current = self.head
         previous = None
-        while current != None:
-            print current.data
-            print item
+        found = False
+        while current != None and not found:
             if current.data == item:
-                print current.data
-                previous = current
+                found = True
                 current = current.next
                 previous.next = current.next
             else:
+                previous = current
                 current = current.next
 
     def search(self,item):
         current = self.head
         found = False
         while current != None and not found:
-            if current == item:
+            if current.data == item:
                 found = True
 
             else:
@@ -53,8 +52,8 @@ arr = [ 10, 5 ,7, 18, 25, 15, 17, 11]
 for x in arr:
     linked_obj.add(x)
 linked_obj.display()
-search_obj = raw_input("enter to search")
+search_obj = input("enter to search")
 linked_obj.search(search_obj)
-remove_obj = raw_input("enter to remove")
+remove_obj = input("enter to remove")
 print linked_obj.remove(remove_obj)
 linked_obj.display()
